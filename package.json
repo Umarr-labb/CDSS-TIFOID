@@ -1,0 +1,71 @@
+{
+    "name": "cdss-tifoid",
+    "version": "1.0.0",
+    "description": "CDSS Demam Tifoid - aplikasi desktop (Electron)",
+    "main": "main.js",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Umarr-labb/CDSS-TIFOID.git"
+    },
+    "dependencies": {
+        "electron-updater": "^6.8.11"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "electron:dev": "electron .",
+        "electron:build": "electron-builder --win",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1",
+        "laravel-vite-plugin": "^0.7.2",
+        "vite": "^4.0.0"
+    },
+    "build": {
+        "appId": "com.cdss.tifoid",
+        "productName": "CDSS Tifoid",
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "Umarr-labb",
+                "repo": "CDSS-TIFOID",
+                "releaseType": "release"
+            }
+        ],
+        "directories": {
+            "output": "dist-electron"
+        },
+        "files": [
+            "main.js",
+            "preload.js",
+            "package.json",
+            "node_modules/electron-updater/**/*"
+        ],
+        "extraResources": [
+            {
+                "from": ".",
+                "to": "laravel",
+                "filter": [
+                    "**/*",
+                    "!node_modules/**",
+                    "!.git/**",
+                    "!dist/**",
+                    "!dist-electron/**",
+                    "!.env",
+                    "!storage/logs/**"
+                ]
+            }
+        ],
+        "win": {
+            "target": "nsis"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
+    }
+}

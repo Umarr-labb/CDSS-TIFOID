@@ -1,0 +1,33 @@
+{
+    "id": "/",
+    "name": "CDSS Tifoid",
+    "short_name": "CDSS Tifoid",
+    "description": "Sistem Pendukung Keputusan Klinis Demam Tifoid",
+    "lang": "id",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#f3f7fa",
+    "theme_color": "#087f8c",
+    "icons": [
+        {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/pwa-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
